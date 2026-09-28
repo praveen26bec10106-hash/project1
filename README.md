@@ -1,6 +1,4 @@
 # project1
- print("HIGH OR LOW NUMBER GUESSING GAME")
-    print("MADE BY PRAVEEN YADAV")
 
 
 
