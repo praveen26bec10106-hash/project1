@@ -1,0 +1,34 @@
+               PYTHON PROJECT REPORT 
+BY:-PRAVEEN YADAV
+LANGUAGE USED:-Python 3.14.7
+REG NUMER:-26BEC10106 
+
+➡️Project summary:- 
+
+The High or Low Number Guessing Game is a text-based, interactive Python programme. The game challenges players to predict whether a randomly generated  number (between 1 and 200) will be higher or lower than the currently displayed number. If user guesses the number is either higher or lower correctly then he will get +10 points otherwise -5 points will be awarded to user. At last after 10 rounds players name and remark will be given according to points and his name will be saved in leaderboard. The project demonstrates core programming principles including loop control, conditional logic, error handling, function modularity, and basic data structure sorting for a leaderboard system. The project is made using the basic 5 modules taught to us and vityarthi course.
+
+➡️ Game Rules & Mechanics:-
+Starting Conditions: Every player starts with a base score of 50 points.
+Rounds: A single game session lasts for a maximum of 10 rounds.
+Scoring Matrix:
+ Correct guess: +10 points 
+ Incorrect guess: -5 points 
+ Identical numbers: 0 points
+
+➡️Game Over Triggers:-
+ The game ends when either all 10 rounds are completed, or if the player's score drops to 0 or below.
+
+➡️System Architecture & Functions:-
+The program is built using a modular structure with dedicated functions managing specific elements of the application lifecycle
+
+main():-Runs the primary operational loop displaying the user menu.(Play, Rules, Leaderboard, Exit)
+
+get player name():-Handles user login and ensures that empty string exceptions are caught.
+
+show rules():-Displays the score configurations and core mechanics to the user.
+
+get choice():-Input validation loop that forces users to input valid choices (high/h or low/l).
+
+play game():-Core engine driving the active round loops, generating random numbers using the random module, updating statistics, and pushing scores into the tracking array.
+
+show leaderboard():-Utilizes Python's sorted() function with a lambda-style sorting approach to arrange top players in descending order.
