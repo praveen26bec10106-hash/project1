@@ -1,7 +1,11 @@
 # project1
  print("HIGH OR LOW NUMBER GUESSING GAME")
     print("MADE BY PRAVEEN YADAV")
-    print("UNDER GUIDANCE OF Dr. FRIENDS")
+
+
+
+    
+  
     import random
 
     TOTAL_ROUNDS= 10
