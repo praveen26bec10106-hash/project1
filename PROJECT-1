@@ -1,0 +1,145 @@
+import random
+
+MAX_ROUNDS = 10
+START_SCORE = 50
+leaderboard = []
+
+
+def player_name():
+    while True:
+        name = input("Enter your name: ").strip()
+
+        if name != "":
+            return name
+
+        print("Please enter a name.")
+
+
+def rules():
+    print("\n===== HIGH OR LOW GAME =====")
+    print("The computer gives a number between 1 and 200.")
+    print("You have to guess if the next number is HIGH or LOW.")
+    print("Correct guess  : +10 points")
+    print("Wrong guess    : -5 points")
+    print("Same number    : 0 points")
+    print("You can play a maximum of 10 rounds.")
+    print("The game stops if your score becomes 0.")
+    print("Starting score :", START_SCORE)
+
+
+def get_guess():
+    while True:
+        guess = input("\nEnter HIGH or LOW: ").strip().lower()
+
+        if guess == "high" or guess == "h":
+            return "high"
+        elif guess == "low" or guess == "l":
+            return "low"
+        else:
+            print("Please enter HIGH or LOW.")
+
+
+def leaderboard_show():
+    print("\n===== LEADERBOARD =====")
+
+    if len(leaderboard) == 0:
+        print("No scores yet.")
+        return
+
+    leaderboard.sort(reverse=True)
+
+    for i, player in enumerate(leaderboard, 1):
+        print(i, ".", player[1], "-", player[0])
+
+
+def play():
+    name = player_name()
+    score = START_SCORE
+    number = random.randint(1, 200)
+
+    print("\nHello", name)
+    print("Starting number:", number)
+
+    for round_number in range(1, MAX_ROUNDS + 1):
+
+        if score <= 0:
+            break
+
+        print("\n-----------------------")
+        print("Round", round_number, "of", MAX_ROUNDS)
+        print("Current number:", number)
+        print("Score:", score)
+
+        guess = get_guess()
+        new_number = random.randint(1, 200)
+
+        print("Next number:", new_number)
+
+        if new_number == number:
+            print("Both numbers are equal.")
+            print("No points changed.")
+
+        elif new_number > number:
+            if guess == "high":
+                print("Correct! The number went HIGH.")
+                score += 10
+            else:
+                print("Wrong! The number went HIGH.")
+                score -= 5
+
+        else:
+            if guess == "low":
+                print("Correct! The number went LOW.")
+                score += 10
+            else:
+                print("Wrong! The number went LOW.")
+                score -= 5
+
+        number = new_number
+
+    print("\n===== GAME OVER =====")
+    print("Player:", name)
+    print("Final score:", score)
+
+    if score == 0:
+        print("You have run out of points.")
+    elif score >= 100:
+        print("Excellent score!")
+    elif score >= 70:
+        print("Good job!")
+    else:
+        print("Nice try!")
+
+    leaderboard.append((score, name))
+    leaderboard_show()
+
+
+def main():
+    print("HIGH OR LOW NUMBER GUESSING GAME")
+    print("MADE BY PRAVEEN YADAV")
+    print("UNDER GUIDANCE OF Dr.FRIENDS")
+
+    while True:
+        print("\n===== MENU =====")
+        print("1. Play Game")
+        print("2. Show Rules")
+        print("3. Show Leaderboard")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ").strip()
+
+        if choice == "1":
+            play()
+        elif choice == "2":
+            rules()
+        elif choice == "3":
+            leaderboard_show()
+        elif choice == "4":
+            print("Thanks for playing!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+
+if __name__ == "__main__":
+    main()
