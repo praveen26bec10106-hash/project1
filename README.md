@@ -118,13 +118,13 @@ No external libraries are required. The project only uses Python's built-in `ran
 1. Make sure Python 3 is installed on your computer.
 2. Save the project file as:
 
-   `FINAL PYHON PROJECT BY AMAN PATEL.py`
+   `FINAL PYHON PROJECT BY PRAVEEN YADAV.py`
 
 3. Open the folder containing the file in a terminal.
 4. Run:
 
 ```bash
-python "FINAL PYHON PROJECT BY AMAN PATEL.py"
+python "FINAL PYHON PROJECT BY PRAVEEN YADAV.py"
 ```
 
 5. Select an option from the main menu.
